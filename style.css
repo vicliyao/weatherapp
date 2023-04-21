@@ -4,6 +4,21 @@ body{background: #95A0A4;
     background: radial-gradient(ellipse at center, #95A0A4 0%, #484475 100%);
 }
 
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fiveday{
+    display:flex;
+    align-items: center;
+}
+
+.forecase{
+    padding:0.3em;
+}
+
 .weather-icon{
     width:20px;
     height:30px;
