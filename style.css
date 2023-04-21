@@ -3,3 +3,8 @@ body{background: #95A0A4;
     background: -webkit-radial-gradient(center, #95A0A4 0%, #484475 100%);
     background: radial-gradient(ellipse at center, #95A0A4 0%, #484475 100%);
 }
+
+.weather-icon{
+    width:20px;
+    height:30px;
+}
