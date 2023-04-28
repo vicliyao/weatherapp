@@ -22,6 +22,7 @@ function success(position){
 }
 
 const btn = document.getElementById('getWeatherBtn');
+console.log(btn);
 
 btn.addEventListener('click',()=>{
     let forecast = [['M',52],["Tu",53],['W',54],['Th',55],['F',56]]
