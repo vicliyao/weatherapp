@@ -17,16 +17,17 @@ window.onload = function(){
 
     }
 
+
     const btn = document.getElementById("getWeatherBtn");
     console.log(btn);
 
     btn.addEventListener('click',()=>{
-        let forecast = [['M',52],["Tu",53],['W',54],['Th',55],['F',56]]
-        let forecastElements = document.getElementsByClassName('forecast');
-        for (let i=0; i<forecast.length; i++){
-            forecastElements[i].innerHTML = forecast[i][0] + ':' + forecast[i][1] + '°F';
-        }
-    });
+    let forecast = [['M',52],["Tu",53],['W',54],['Th',55],['F',56]]
+    let forecastElements = document.getElementsByClassName('forecast');
+    for (let i=0; i<forecast.length; i++){
+        forecastElements[i].innerHTML = forecast[i][0] + ':' + forecast[i][1] + '°F';
+    }
+});
 }
 
 function success(position){
