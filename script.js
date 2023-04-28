@@ -1,11 +1,14 @@
 //Create the variable for latitude
 //Create the variable for longitude
+let latitude = 0;
+let longitude = 0;
 
 
 window.onload = function(){
     const date=new Date();
     const dateString = (date.getMonth()+1)+"/" + date.getDate() + "/" + date.getFullYear();
     document.getElementById("date").innerHTML = dateString;
+    const btn = document.getElementById("getWeatherBtn");
 
     if ("geolocation" in navigator){
         navigator.geolocation.getCurrentPosition(success);
@@ -21,7 +24,7 @@ function success(position){
     console.log(latitude,longitude);
 }
 
-const btn = document.getElementById('getWeatherBtn');
+
 console.log(btn);
 
 btn.addEventListener('click',()=>{
