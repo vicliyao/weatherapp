@@ -27,16 +27,16 @@ function success(position){
 
     const btn = document.getElementById("getWeatherBtn");
 
-    btn.addEventListener('click',()=>{
+    btn.addEventListener('click',function(){
         const xhr = new XMLHttpRequest(); //Define XMLhttp object
         xhr.open('GET',`http://localhost:3000/weather/${latitude}/${longitude}`);
         xhr.send(); //Send requent
 
         xhr.onload = function(){ //Once we get response
             const body = JSON.parse(xhr.responseText)  //Transfer from JSON format
-            var temp = body.temperature
-            var weatherStatus = body.weatherStatus
-            document.getElementById('temperature').innerHTML = `Temperature:${temperature} °F`;
+            let temp = body.temperature;
+            let weatherStatus = body.weatherStatus;
+            document.getElementById('temperature').innerHTML = `Temperature:${temp} °F`;
             document.getElementById('weatherStatus').innerHTML = `Weather Status: ${weatherStatus}`;
 
 
@@ -55,7 +55,7 @@ function success(position){
                 const body = JSON.parse(xhr2.responseText);  //Transfer from JSON format
                 let forecast = body;
 
-                var forecastElements = document.getElementsByClassName('forecast'); //5 classes named forecast
+                let forecastElements = document.getElementsByClassName('forecast'); //5 classes named forecast
                 for (var i=0; i < forecast.length; i++){
                     forecastElements[i].innerHTML = `${forecast[i].dayName}: ${forecast[i].temp}°F`;
                 }
