@@ -41,12 +41,12 @@ window.onload = function(){
         // ~~~~~~~~~~~~~~~~~~~~ 5-Day Forecast ~~~~~~~~~~~~~~~~~~~~~~~~~
         
             const xhr2 = new XMLHttpRequest(); //Define XMLhttp object
-            xhr2.open('GET',`localhost:3000/weather/${latitude}/${longitude}`);
+            xhr2.open('GET',`localhost:3000/5day/${latitude}/${longitude}`);
             xhr2.send(); //Send requent
     
             xhr2.onload = function(){ //Once we get response
                 const body = JSON.parse(xhr2.responseText);  //Transfer from JSON format
-                let forecast = body.forecast;
+                let forecast = body;
 
                 var forecastElements = document.getElementsByClassName('forecast'); //5 classes named forecast
                 for (var i=0; i < forecast.length; i++){
@@ -56,8 +56,7 @@ window.onload = function(){
     
             }
         
-        var forecast = [['M',52],["Tu",53],['W',54],['Th',55],['F',56]]; //Predefined Day/Degree ( Nested Array)
-        
+    
         for (var i=0; i<forecast.length; i++){ //loop from 0th index to length-1 index
             forecastElements[i].innerHTML = forecast[i][0] + ':' + forecast[i][1] + '°F';
         }
