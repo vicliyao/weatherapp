@@ -41,26 +41,24 @@ function success(position){
         }
         // ~~~~~~~~~~~~~~~~~~~~ 5-Day Forecast ~~~~~~~~~~~~~~~~~~~~~~~~~
         
-            const xhr2 = new XMLHttpRequest(); //Define XMLhttp object
-            xhr2.open('GET',`http://localhost:3000/5day/${latitude}/${longitude}`);
-            xhr2.send(); //Send requent
-    
-            xhr2.onload = function(){ //Once we get response
-                const body = JSON.parse(xhr2.responseText);  //Transfer from JSON format
-                let forecast = body.forecast;
+        const xhr2 = new XMLHttpRequest(); //Define XMLhttp object
+        xhr2.open('GET',`http://localhost:3000/5day/${latitude}/${longitude}`);
+        xhr2.send(); //Send requent
 
-                console.log(forecast)
-                let forecastElements = document.getElementsByClassName('forecast'); //5 classes named forecast
-                for (var i=0; i < forecast.length; i++){
-                    forecastElements[i].innerHTML = `${forecast[i].dayName}: ${forecast[i].temp}°F`;
-                }
+        xhr2.onload = function(){ //Once we get response
+            const body = JSON.parse(xhr2.responseText);  //Transfer from JSON format
+            console.log(xhr2.responseText);
+            let forecast = body.forecast;
 
-    
+            let forecastElements = document.getElementsByClassName('forecast'); //5 classes named forecast
+            for (var i=0; i < forecast.length; i++){
+                forecastElements[i].innerHTML = `${forecast[i].dayName}: ${forecast[i].temp}°F`;
             }
-        
+        }
+
     
-        })    
-    }
+    })    
+}
     
 
 
