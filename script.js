@@ -37,7 +37,7 @@ function success(position){
             let temp = body.temperature;
             let weatherStatus = body.WeatherStatus;
             document.getElementById('temperature').innerHTML = `Temperature:${temp} °F`;
-            document.getElementById('weatherStatus').innerHTML = `Weather Status: ${weatherStatus}`;
+            document.getElementById('weatherstatus').innerHTML = `Weather Status: ${weatherStatus}`;
 
 
         }
