@@ -35,7 +35,7 @@ function success(position){
         xhr.onload = function(){ //Once we get response
             const body = JSON.parse(xhr.responseText)  //Transfer from JSON format
             let temp = body.temperature;
-            let weatherStatus = body.weatherStatus;
+            let weatherStatus = body.WeatherStatus;
             document.getElementById('temperature').innerHTML = `Temperature:${temp} °F`;
             document.getElementById('weatherStatus').innerHTML = `Weather Status: ${weatherStatus}`;
 
