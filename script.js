@@ -38,13 +38,7 @@ function success(position){
             let weatherStatus = body.WeatherStatus;
             document.getElementById('temperature').innerHTML = `Temperature:${temp} °F`;
             document.getElementById('weatherstatus').innerHTML = `Weather Status: ${weatherStatus}`;
-
-
         }
-        // var location= 'Santa Cruz';
-        // var temp = 59;
-        //  var loc_temp = `In ${location} it is ${temp} degrees`; //Backtick. Allow string to include variables
-
         // ~~~~~~~~~~~~~~~~~~~~ 5-Day Forecast ~~~~~~~~~~~~~~~~~~~~~~~~~
         
             const xhr2 = new XMLHttpRequest(); //Define XMLhttp object
@@ -53,7 +47,7 @@ function success(position){
     
             xhr2.onload = function(){ //Once we get response
                 const body = JSON.parse(xhr2.responseText);  //Transfer from JSON format
-                let forecast = body;
+                let forecast = body.forecast;
 
                 let forecastElements = document.getElementsByClassName('forecast'); //5 classes named forecast
                 for (var i=0; i < forecast.length; i++){
