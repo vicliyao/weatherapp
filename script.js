@@ -49,6 +49,7 @@ function success(position){
                 const body = JSON.parse(xhr2.responseText);  //Transfer from JSON format
                 let forecast = body.forecast;
 
+                console.log(forecast)
                 let forecastElements = document.getElementsByClassName('forecast'); //5 classes named forecast
                 for (var i=0; i < forecast.length; i++){
                     forecastElements[i].innerHTML = `${forecast[i].dayName}: ${forecast[i].temp}°F`;
