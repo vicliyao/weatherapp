@@ -18,11 +18,18 @@ window.onload = function(){
     }
 
 
+
+function success(position){
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    console.log(latitude,longitude);
+}
+
     const btn = document.getElementById("getWeatherBtn");
 
     btn.addEventListener('click',()=>{
         const xhr = new XMLHttpRequest(); //Define XMLhttp object
-        xhr.open('GET',`localhost:3000/weather/${latitude}/${longitude}`);
+        xhr.open('GET',`http://localhost:3000/weather/${latitude}/${longitude}`);
         xhr.send(); //Send requent
 
         xhr.onload = function(){ //Once we get response
@@ -41,7 +48,7 @@ window.onload = function(){
         // ~~~~~~~~~~~~~~~~~~~~ 5-Day Forecast ~~~~~~~~~~~~~~~~~~~~~~~~~
         
             const xhr2 = new XMLHttpRequest(); //Define XMLhttp object
-            xhr2.open('GET',`localhost:3000/5day/${latitude}/${longitude}`);
+            xhr2.open('GET',`http://localhost:3000/5day/${latitude}/${longitude}`);
             xhr2.send(); //Send requent
     
             xhr2.onload = function(){ //Once we get response
@@ -57,15 +64,8 @@ window.onload = function(){
             }
         
     
-        for (var i=0; i<forecast.length; i++){ //loop from 0th index to length-1 index
-            forecastElements[i].innerHTML = forecast[i][0] + ':' + forecast[i][1] + '°F';
-        }
-    });
+        })    
     }
+    
 
-function success(position){
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-    console.log(latitude,longitude);
-}
 
